@@ -124,6 +124,8 @@ body {
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   border-radius: 8px;
   padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #28435a;
   color: white;
 }
@@ -178,7 +180,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  gap: 35px;
+  gap: 0px;
 }
 .row1 {
   display: flex;
@@ -288,7 +290,6 @@ body {
 #chart {
   color: #28435a;
   width: 550px;
-  margin: 0;
   display: flex;
   align-items: center;
 }
