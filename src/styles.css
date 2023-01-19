@@ -177,6 +177,7 @@ body {
 .rows {
   display: flex;
   flex-direction: column;
+
   gap: 35px;
 }
 .row1 {
@@ -304,12 +305,6 @@ body {
 }
 
 #charts {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-self: center;
-  height: 350px;
 }
 #chart2 {
   width: 550px;
@@ -317,4 +312,14 @@ body {
   display: flex;
   align-items: center;
   color: #264158;
+}
+
+footer {
+  padding-top: 16px;
+  font-size: 16px;
+  color: grey;
+}
+
+.footer-link {
+  color: rgb(213, 212, 212);
 }
