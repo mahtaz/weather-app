@@ -1,0 +1,319 @@
+* {
+  box-sizing: content-box;
+}
+header {
+  top: 0;
+  position: fixed;
+  background-color: rgb(26, 26, 26);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px inset,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px inset;
+
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  z-index: 100;
+}
+input {
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: none;
+  padding: 8px 7px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 350px;
+  color: #9c9c9c;
+}
+#near-icon-description {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+#main-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#icon-and-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.search-icon {
+  color: rgb(192, 181, 181);
+  font-size: 20px;
+  padding-left: 5px;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: #685f5f;
+  padding: 0px 8px;
+  border-radius: 20px;
+  z-index: 100;
+}
+.search-bar:hover {
+  background-color: white;
+}
+::placeholder {
+  color: rgb(161, 152, 152);
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+}
+
+.weather-setting {
+  color: white;
+}
+.temperature:hover {
+  background-color: #877d7d;
+  cursor: pointer;
+}
+button {
+  outline: none;
+  border: none;
+}
+.temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #685f5f;
+  font-size: 20px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.temp-icon {
+  color: #eab535;
+  padding-right: 6px;
+}
+
+body {
+  background: linear-gradient(
+    89.7deg,
+    rgb(0, 0, 0) -10.7%,
+    rgb(53, 92, 125) 88.8%
+  );
+  font-family: "Red Hat Text", sans-serif;
+}
+.content {
+  font-family: "Red Hat Text", sans-serif;
+  margin-top: 95px;
+  padding: 22px 40px;
+  padding-bottom: 100px;
+  font-size: 20px;
+}
+.card1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 26px;
+}
+.card2,
+.card1,
+.day,
+#chart,
+#chart2 {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #28435a;
+  color: white;
+}
+#sunrise-sunset-icon {
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 120px;
+  border-top: 4px solid orange;
+  border-right: 1px solid orange;
+  border-left: 1px solid orange;
+  border-bottom-color: #eca03d00;
+  border-radius: 150px 150px 0 0;
+  background-color: rgba(176, 88, 12, 0);
+}
+#sunrise-sunset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+#sunrise-sunset-time {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 22px;
+}
+.up-arrow,
+.down-arrow {
+  color: #eab535;
+  text-decoration: underline;
+  font-weight: lighter;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.title {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 40px;
+  color: white;
+  padding: 20px 4px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.weather-attributes,
+.prepare-for-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.prepare-for-day > div {
+  border: 1px solid rgba(34, 34, 34, 0.496);
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 12px;
+  width: 80px;
+  height: 70px;
+  background-color: #2c4052;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-attributes > div {
+  font-weight: lighter;
+  font-size: 15px;
+  color: #b5b5b5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.day {
+  padding: 9px 16px;
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background-color: #264158;
+  width: 130px;
+}
+
+.weather-icon {
+  font-size: 40px;
+  color: #e8b338;
+}
+
+.today {
+  width: 250px;
+  border: 1px solid rgb(129, 129, 129);
+  box-shadow: rgba(255, 255, 255, 0.27) 0px 0px 0.25em,
+    rgba(208, 209, 210, 0.05) 0px 0.25em 1em;
+  border-radius: 16px;
+  padding: 6px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background-color: #264158;
+}
+.card2-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.color-pannel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card2 div:first-child {
+  text-align: center;
+  font-weight: normal;
+  font-size: 20;
+}
+
+.prep-icon {
+  font-size: 20px;
+}
+#health-recommendation {
+  font-size: smaller;
+  color: #b7b7b7;
+  margin: 0%;
+}
+#health-recommendation > span {
+  color: white;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  /* font-family: Roboto, sans-serif; */
+  font-family: "Times New Roman", Times, serif;
+}
+
+#chart {
+  color: #28435a;
+  width: 600px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+* {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.forecast-7days-icon {
+  /* filter: grayscale(100%) contrast(200%); */
+  filter: invert(55%) sepia(140%) contrast(200%);
+  width: 70px;
+  height: 56px;
+  object-fit: none;
+}
+
+#charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  height: 350px;
+}
+#chart2 {
+  width: 40%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  color: #264158;
+}
