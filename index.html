@@ -37,8 +37,8 @@
     <title>⛅Weather Forecast</title>
   </head>
   <body class="container">
-    <header class="row">
-      <div class="col-8">
+    <header class="row justify-content-center">
+      <div class="col-8 col-lg-11">
         <form class="search-bar">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input id="searchBox" type="text" placeholder="Search Location..." />
@@ -63,8 +63,8 @@
       </div>
 
       <div class="rows">
-        <div class="row1 row">
-          <div class="mx-1 col-12 col-sm-12 col-md-12 col-lg card1">
+        <div class="row1 row justify-content-center">
+          <div class="mx-2 col-11 col-sm-12 col-md-12 col-lg card1">
             <div>
               Current Weather
               <br />
@@ -125,7 +125,7 @@
               </div>
             </div>
           </div>
-          <div class="mx-1 col-12 col-sm-12 col-md-12 col-lg card2">
+          <div class="mx-2 col-11 col-sm-12 col-md-12 col-lg card2">
             <div>
               LIVE AQI INDEX : <span id="aqi-index"></span>
               <br />
@@ -162,8 +162,8 @@
             </div>
           </div>
         </div>
-        <div class="row1 row">
-          <div class="day">
+        <div class="row1 row justify-content-around">
+          <div class="day mx-2 col-3 col-lg">
             <div id="today">Today</div>
             <!-- <i
               class="fa-solid fa-cloud weather-icon fa-fa fa-fade"
@@ -172,7 +172,7 @@
             <img alt="fre" class="forecast-7days-icon" id="day0-icon" />
             <div id="high-low-0"></div>
           </div>
-          <div class="day">
+          <div class="day mx-2 col-3 col-lg">
             <div id="day1"></div>
             <!-- <i
               class="fa-solid fa-sun weather-icon fa-fade"
@@ -186,7 +186,7 @@
             />
             <div id="high-low-1"></div>
           </div>
-          <div class="day">
+          <div class="day mx-2 col-3 col-lg">
             <div id="day2"></div>
             <!-- <i
               class="fa-solid fa-cloud-sun-rain weather-icon fa-fade"
@@ -200,7 +200,7 @@
             />
             <div id="high-low-2"></div>
           </div>
-          <div class="day">
+          <div class="day mx-2 col-3 col-lg">
             <div id="day3"></div>
             <!-- <i
               class="fa-solid fa-cloud-showers-water weather-icon fa-fade"
@@ -215,7 +215,7 @@
 
             <div id="high-low-3"></div>
           </div>
-          <div class="day">
+          <div class="day mx-2 col-3 col-lg">
             <div id="day4"></div>
             <!-- <i
               class="fa-solid fa-cloud-showers-heavy weather-icon fa-fade"
@@ -229,7 +229,7 @@
             />
             <div id="high-low-4"></div>
           </div>
-          <div class="day">
+          <div class="day mx-2 col-3 col-lg">
             <div id="day5"></div>
             <!-- <i
               class="fa-solid fa-cloud-sun-rain weather-icon fa-fade"
@@ -244,9 +244,15 @@
             <div id="high-low-5"></div>
           </div>
         </div>
-        <div class="row1 row" id="charts">
-          <div id="chart"></div>
-          <div id="chart2"></div>
+        <div class="row1 row justify-content-center" id="charts">
+          <div
+            class="mx-2 col-11 col-sm-12 col-md-12 col-lg card1"
+            id="chart"
+          ></div>
+          <div
+            class="mx-2 col-11 col-sm-12 col-md-12 col-lg card1"
+            id="chart2"
+          ></div>
         </div>
         <div class="row1 row">
           <footer>

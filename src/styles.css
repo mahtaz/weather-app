@@ -8,7 +8,7 @@ header {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 30px 40px;
   z-index: 100;
@@ -58,6 +58,7 @@ input {
   padding: 0px 8px;
   border-radius: 20px;
   z-index: 100;
+  max-width: 450px;
 }
 .search-bar:hover {
   background-color: white;
@@ -233,7 +234,7 @@ body {
   align-items: center;
   gap: 6px;
   background-color: #264158;
-  width: 130px;
+  /* width: 130px; */
 }
 
 .weather-icon {
