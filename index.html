@@ -36,20 +36,24 @@
 
     <title>⛅Weather Forecast</title>
   </head>
-  <body>
-    <header>
-      <form class="search-bar">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input id="searchBox" type="text" placeholder="Search Location..." />
-      </form>
+  <body class="container">
+    <header class="row">
+      <div class="col-8">
+        <form class="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input id="searchBox" type="text" placeholder="Search Location..." />
+        </form>
+      </div>
 
-      <button class="temperature">
-        <i
-          class="fa-solid fa-temperature-half temp-icon fa-fade"
-          style="--fa-animation-duration: 1.5s; --fa-fade-opacity: 0.5"
-        ></i>
-        <div class="weather-setting">°C</div>
-      </button>
+      <div class="col-1">
+        <button class="temperature">
+          <i
+            class="fa-solid fa-temperature-half temp-icon fa-fade"
+            style="--fa-animation-duration: 1.5s; --fa-fade-opacity: 0.5"
+          ></i>
+          <div class="weather-setting">°C</div>
+        </button>
+      </div>
     </header>
     <div class="content">
       <div class="title">
@@ -59,8 +63,8 @@
       </div>
 
       <div class="rows">
-        <div class="row1">
-          <div class="card1">
+        <div class="row1 row">
+          <div class="mx-1 col-12 col-sm-12 col-md-12 col-lg card1">
             <div>
               Current Weather
               <br />
@@ -121,7 +125,7 @@
               </div>
             </div>
           </div>
-          <div class="card2">
+          <div class="mx-1 col-12 col-sm-12 col-md-12 col-lg card2">
             <div>
               LIVE AQI INDEX : <span id="aqi-index"></span>
               <br />
@@ -158,7 +162,7 @@
             </div>
           </div>
         </div>
-        <div class="row1">
+        <div class="row1 row">
           <div class="day">
             <div id="today">Today</div>
             <!-- <i
@@ -240,11 +244,11 @@
             <div id="high-low-5"></div>
           </div>
         </div>
-        <div class="row1" id="charts">
+        <div class="row1 row" id="charts">
           <div id="chart"></div>
           <div id="chart2"></div>
         </div>
-        <div class="row1">
+        <div class="row1 row">
           <footer>
             This project is
             <a
