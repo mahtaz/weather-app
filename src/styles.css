@@ -43,7 +43,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 20px;
 }
 .search-icon {
   color: rgb(192, 181, 181);
@@ -313,7 +313,6 @@ body {
 }
 #chart2 {
   /* width: 550px; */
-  height: 350px;
   display: flex;
   align-items: center;
   color: #264158;

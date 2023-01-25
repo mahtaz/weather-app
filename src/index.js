@@ -190,9 +190,6 @@ function writeDays(city) {
   });
 }
 
-writeDays("tehran");
-drawChart("tehran");
-
 // todayImg.src = todayImgUrl;
 // todayImg.src = "pic.jpg";
 //todayImg
@@ -233,37 +230,55 @@ let healthRecomMap = {
   4: " Members of sensitive groups may experience more serious health effects.",
   5: " Health alert,The risk of health effects is increased for everyone.",
 };
-let url = `https://api.openweathermap.org/data/2.5/weather?q=Tehran&appid=${apiKey}&units=metric`;
-axios.get(url).then(function (response) {
-  heading_temp.innerHTML = Math.round(response.data.main.temp) + "°C";
-  temp.innerHTML = Math.round(response.data.main.temp) + "°C";
-  wind.innerHTML = Math.round(response.data.wind.speed) + " m/s";
-  visibility.innerHTML = Math.round(response.data.visibility) / 1000 + " km";
-  humidity.innerHTML = Math.round(response.data.main.humidity) + "%";
-  pressure.innerHTML = response.data.main.pressure + " hPa";
-  clouds.innerHTML = Math.round(response.data.clouds.all) + "%";
-  feelsLike.innerHTML = Math.round(response.data.main.feels_like) + "°C";
-  weatherDescription.innerHTML = response.data.weather[0].description;
-  minTemp.innerHTML = response.data.main.temp_min.toFixed(1) + "°C";
-  maxTemp.innerHTML = response.data.main.temp_max.toFixed(1) + "°C";
-  sunriseTime.innerHTML = convertUnixToTime(response.data.sys.sunrise);
-  sunsetTime.innerHTML = convertUnixToTime(response.data.sys.sunset);
-  let todayImgUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-  todayicon.setAttribute("src", todayImgUrl);
-  todayHighLow.innerHTML = `${Math.round(response.data.main.temp_max)}°
+
+// let url = `https://api.openweathermap.org/data/2.5/weather?q=Tehran&appid=${apiKey}&units=metric`;
+
+let units = "metric";
+function currentDay(city) {
+  if (units === "metric") {
+    var tempUnit = "°C";
+  } else {
+    var tempUnit = "°F";
+  }
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(url).then(function (response) {
+    heading_temp.innerHTML = Math.round(response.data.main.temp) + tempUnit;
+    temp.innerHTML = Math.round(response.data.main.temp) + tempUnit;
+    wind.innerHTML = Math.round(response.data.wind.speed) + " m/s";
+    visibility.innerHTML = Math.round(response.data.visibility) / 1000 + " km";
+    humidity.innerHTML = Math.round(response.data.main.humidity) + "%";
+    pressure.innerHTML = response.data.main.pressure + " hPa";
+    clouds.innerHTML = Math.round(response.data.clouds.all) + "%";
+    feelsLike.innerHTML = Math.round(response.data.main.feels_like) + tempUnit;
+    weatherDescription.innerHTML = response.data.weather[0].description;
+    minTemp.innerHTML = response.data.main.temp_min.toFixed(1) + tempUnit;
+    maxTemp.innerHTML = response.data.main.temp_max.toFixed(1) + tempUnit;
+    sunriseTime.innerHTML = convertUnixToTime(response.data.sys.sunrise);
+    sunsetTime.innerHTML = convertUnixToTime(response.data.sys.sunset);
+    let todayImgUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+    todayicon.setAttribute("src", todayImgUrl);
+    todayHighLow.innerHTML = `${Math.round(response.data.main.temp_max)}°
     ${Math.round(response.data.main.temp_min)}°`;
+    let lat = response.data.coord.lat;
+    let lon = response.data.coord.lon;
 
-  let aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.6944&lon=51.4215&appid=${apiKey}`;
-  axios.get(aqiUrl).then(function (response) {
-    let aqi = document.getElementById("aqi-index");
-    let weatherQuality = document.getElementById("weather-quality");
-    let spanhealthRecom = document.getElementById("health-recom");
+    let aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    axios.get(aqiUrl).then(function (response) {
+      let aqi = document.getElementById("aqi-index");
+      let weatherQuality = document.getElementById("weather-quality");
+      let spanhealthRecom = document.getElementById("health-recom");
 
-    aqi.innerHTML = response.data.list[0].main.aqi;
-    weatherQuality.innerHTML = aqiMap[response.data.list[0].main.aqi];
-    spanhealthRecom.innerHTML = healthRecomMap[response.data.list[0].main.aqi];
+      aqi.innerHTML = response.data.list[0].main.aqi;
+      weatherQuality.innerHTML = aqiMap[response.data.list[0].main.aqi];
+      spanhealthRecom.innerHTML =
+        healthRecomMap[response.data.list[0].main.aqi];
+    });
   });
-});
+}
+
+writeDays("tehran");
+drawChart("tehran");
+currentDay("tehran");
 
 searchBox.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -272,53 +287,12 @@ searchBox.addEventListener("keydown", function (event) {
     let city = searchBox.value;
     writeDays(city);
     drawChart(city);
-
-    let units = unitsMap[weather_setting.innerHTML];
-
+    units = unitsMap[weather_setting.innerHTML];
     const modifiedString =
       city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
     let location = document.getElementById("location");
-
     location.innerHTML = modifiedString;
-
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-    axios.get(url).then(function (response) {
-      console.log(response.data);
-      heading_temp.innerHTML =
-        Math.round(response.data.main.temp) + weather_setting.innerHTML;
-      temp.innerHTML =
-        Math.round(response.data.main.temp) + weather_setting.innerHTML;
-      wind.innerHTML = Math.round(response.data.wind.speed) + " m/s";
-      visibility.innerHTML =
-        Math.round(response.data.visibility) / 1000 + " km";
-      humidity.innerHTML = Math.round(response.data.main.humidity) + "%";
-      pressure.innerHTML = response.data.main.pressure + " hPa";
-      clouds.innerHTML = Math.round(response.data.clouds.all) + "%";
-      feelsLike.innerHTML =
-        Math.round(response.data.main.feels_like) + weather_setting.innerHTML;
-      minTemp.innerHTML = response.data.main.temp_min.toFixed(1) + "°C";
-      maxTemp.innerHTML = response.data.main.temp_max.toFixed(1) + "°C";
-      sunriseTime.innerHTML = convertUnixToTime(response.data.sys.sunrise);
-      sunsetTime.innerHTML = convertUnixToTime(response.data.sys.sunset);
-      let todayImgUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
-      todayicon.setAttribute("src", todayImgUrl);
-      todayHighLow.innerHTML = `${Math.round(response.data.main.temp_max)}°
-    ${Math.round(response.data.main.temp_min)}°`;
-      let lat = response.data.coord.lat;
-      let lon = response.data.coord.lon;
-      let aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-      axios.get(aqiUrl).then(function (response) {
-        let aqi = document.getElementById("aqi-index");
-        let weatherQuality = document.getElementById("weather-quality");
-        let spanhealthRecom = document.getElementById("health-recom");
-
-        aqi.innerHTML = response.data.list[0].main.aqi;
-        weatherQuality.innerHTML = aqiMap[response.data.list[0].main.aqi];
-        spanhealthRecom.innerHTML =
-          healthRecomMap[response.data.list[0].main.aqi];
-      });
-    });
+    currentDay(city);
   }
 });
 let temp_icon = document.querySelector(".temperature");
@@ -471,12 +445,6 @@ var options = {
     column: {
       colors: undefined,
       opacity: 0.5,
-    },
-    padding: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
     },
   },
 };
