@@ -54,12 +54,26 @@ input {
   display: flex;
   align-items: center;
   justify-content: start;
-  background-color: #685f5f;
+  background-color: #8c8282;
   padding: 0px 8px;
   border-radius: 20px;
   z-index: 100;
   max-width: 450px;
 }
+
+#suggestion {
+  margin-top: 4px;
+  width: 200px;
+  position: absolute;
+  font-size: 13px;
+}
+.list-group-item {
+  background-color: #323232;
+  border: 1px solid black;
+  padding-left: 30px;
+  color: white;
+}
+
 .search-bar:hover {
   background-color: white;
 }

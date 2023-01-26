@@ -38,11 +38,17 @@
   </head>
   <body class="container">
     <header class="row justify-content-center">
-      <div class="col-8 col-lg-11">
+      <div class="col-8 col-sm-5 col-lg-11">
         <form class="search-bar">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input id="searchBox" type="text" placeholder="Search Location..." />
+          <input
+            id="searchBox"
+            type="text"
+            placeholder="Search Location..."
+            autocomplete="off"
+          />
         </form>
+        <div id="suggestion" class="list-group col-8 col-sm-5 col-lg-11"></div>
       </div>
 
       <div class="col-1">
