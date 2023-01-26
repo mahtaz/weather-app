@@ -22,7 +22,7 @@ input {
   font-size: 16px;
   border-radius: 8px;
   width: 350px;
-  color: #9c9c9c;
+  color: #3b3b3b;
 }
 #near-icon-description {
   display: flex;
@@ -54,7 +54,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: start;
-  background-color: #8c8282;
+  background-color: #685f5f;
   padding: 0px 8px;
   border-radius: 20px;
   z-index: 100;
@@ -78,9 +78,10 @@ input {
   background-color: white;
 }
 ::placeholder {
-  color: rgb(161, 152, 152);
+  color: rgb(180, 169, 169);
   background-color: rgba(255, 255, 255, 0);
   opacity: 1;
+  font-weight: 500;
 }
 
 .weather-setting {
