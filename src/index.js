@@ -87,6 +87,20 @@ var options2 = {
   },
   xaxis: {
     categories: [],
+    axisTicks: {
+      show: false,
+      height: 100,
+      offsetX: 0,
+      offsetY: 0,
+    },
+    axisBorder: {
+      show: true,
+      color: "white",
+      height: 1,
+      width: "100%",
+      offsetX: 0,
+      offsetY: 0,
+    },
   },
 
   yaxis: {
@@ -103,7 +117,35 @@ var options2 = {
     },
   },
   grid: {
-    borderColor: "white",
+    show: true,
+    borderColor: "#90A4AE",
+    strokeDashArray: 0,
+    position: "back",
+    xaxis: {
+      lines: {
+        show: false,
+      },
+    },
+    yaxis: {
+      lines: {
+        show: true,
+        offsetY: 30,
+      },
+    },
+    row: {
+      colors: undefined,
+      opacity: 0.5,
+    },
+    column: {
+      colors: undefined,
+      opacity: 0.5,
+    },
+    padding: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    },
   },
 };
 
