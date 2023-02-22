@@ -33,6 +33,7 @@ var options2 = {
   stroke: {
     curve: "straight",
   },
+
   title: {
     text: "24 Hour temp Forecast",
     align: "left",
